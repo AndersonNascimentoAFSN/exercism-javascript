@@ -27,7 +27,7 @@ export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
  * @returns {boolean}
  */
 export function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
-  return archerIsAwake ? false : prisonerIsAwake;
+  return (!archerIsAwake && prisonerIsAwake);
 }
 
 /**
@@ -46,6 +46,5 @@ export function canFreePrisoner(
 ) {
   return (petDogIsPresent && !archerIsAwake) 
   || (!petDogIsPresent && prisonerIsAwake)
-  && (!archerIsAwake && !knightIsAwake)
-  ? true : false;
+  && (!archerIsAwake && !knightIsAwake);
 }
